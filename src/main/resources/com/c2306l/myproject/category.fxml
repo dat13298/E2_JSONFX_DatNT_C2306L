@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.c2306l.myproject.Controller.CategoryController"
-            prefHeight="400.0" prefWidth="600.0">
-    <HBox>
-            <TableView fx:id="tableCategory" layoutX="14.0" layoutY="14.0" prefWidth="501" prefHeight="500">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.c2306l.myproject.Controller.CategoryController">
+    <HBox prefHeight="489.0" prefWidth="878.0">
+<!--        <TitledPane text="Category List">-->
+            <TableView fx:id="tableCategory" layoutX="14.0" layoutY="14.0" prefHeight="500" prefWidth="501">
                 <columns>
                     <TableColumn fx:id="cid" prefWidth="75.0" text="ID" />
                     <TableColumn fx:id="ccode" prefWidth="75.0" text="Code" />
@@ -17,15 +20,15 @@
                 </columns>
             </TableView>
 
-        <AnchorPane prefHeight="323" prefWidth="188">
+        <AnchorPane prefHeight="489.0" prefWidth="411.0">
             <children>
-                <TextField fx:id="txtCode" text="Enter Category ID" layoutX="14" layoutY="31" prefHeight="25" prefWidth="199"/>
-                <TextField fx:id="txtName" text="Enter Category Name" layoutX="14" layoutY="85" prefHeight="25" prefWidth="363"/>
-                <TextArea fx:id="txtDescription" promptText="Enter Description" layoutX="14" layoutY="132" prefHeight="184" prefWidth="363"/>
+                <TextField fx:id="txtCode" layoutX="14" layoutY="31" prefHeight="25" prefWidth="199" promptText="Enter Category ID" />
+                <TextField fx:id="txtName" layoutX="14" layoutY="85" prefHeight="25" prefWidth="363" promptText="Enter Category Name" />
+                <TextArea fx:id="txtDescription" layoutX="14" layoutY="132" prefHeight="184" prefWidth="363" promptText="Enter Description" />
+              <Button fx:id="btnNewCategory" layoutX="9.0" layoutY="401.0" mnemonicParsing="false" text="Create New Category" textFill="#1333c3" />
+              <Button layoutX="213.0" layoutY="402.0" mnemonicParsing="false" text="Delete" textFill="#c91313" />
+              <Button fx:id="btnEditCategory" layoutX="305.0" layoutY="402.0" mnemonicParsing="false" text="Update" textFill="#bc18a1" />
             </children>
         </AnchorPane>
-        <Button fx:id="btnNewCategory" mnemonicParsing="false" text="Create New Category" textFill="#1333c3" layoutX="531" layoutY="395"/>
-        <Button mnemonicParsing="false" text="Delete" textFill="#c91313" layoutX="770" layoutY="395"/>
-        <Button fx:id="btnEditCategory" mnemonicParsing="false" text="Update" textFill="#bc18a1" layoutX="858" layoutY="395"/>
     </HBox>
 </AnchorPane>

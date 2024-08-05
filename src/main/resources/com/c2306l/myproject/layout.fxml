@@ -3,23 +3,15 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
-<?import javafx.scene.control.MenuButton?>
 <?import javafx.scene.control.MenuItem?>
-<?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.StackPane?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.paint.Color?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0"
-            xmlns="http://javafx.com/javafx/22"
-            xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="com.c2306l.myproject.Controller.LayoutController"
-            stylesheets="@layoutCSS.css">
-    <BorderPane  styleClass="left-pane" maxHeight="400" maxWidth="600" prefHeight="Infinity" prefWidth="Infinity">
+<AnchorPane prefHeight="600.0" prefWidth="900.0" stylesheets="@layoutCSS.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.c2306l.myproject.Controller.LayoutController">
+    <BorderPane maxHeight="600.0" maxWidth="900" prefHeight="600.0" prefWidth="900.0" styleClass="left-pane">
         <top>
-            <MenuBar styleClass="left-pane" maxHeight="35" maxWidth="600" prefHeight="35" prefWidth="600">
+            <MenuBar maxHeight="35" maxWidth="900" prefHeight="35" prefWidth="900" styleClass="left-pane">
                 <Menu text="Category">
                     <MenuItem fx:id="mnCategoryList" text="List" />
                     <MenuItem text="Add" />
@@ -34,7 +26,7 @@
 
         </right>
         <center>
-            <StackPane styleClass="left-pane" fx:id="stackPane">
+            <StackPane fx:id="stackPane" prefHeight="393.0" prefWidth="900.0" styleClass="left-pane">
 
             </StackPane>
 

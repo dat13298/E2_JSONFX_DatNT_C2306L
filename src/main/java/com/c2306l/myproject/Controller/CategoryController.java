@@ -2,8 +2,9 @@ package com.c2306l.myproject.Controller;
 
 import com.c2306l.myproject.Entity.Category;
 import com.c2306l.myproject.Model.CategoryStatement;
-import com.mysql.cj.xdevapi.Table;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
@@ -29,6 +30,7 @@ public class CategoryController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
 //        List categories
         categories = CategoryStatement.getCategoryList();
+
         tableCategory.setEditable(true);
         tableCategory.getColumns().get(0).setVisible(false);
         cid.setText("ID");
@@ -37,5 +39,23 @@ public class CategoryController implements Initializable {
         cname.setCellValueFactory(new PropertyValueFactory<Category, String>("name"));
         cdescription.setCellValueFactory(new PropertyValueFactory<Category, String>("description"));
         tableCategory.setItems(categories);
+        btnNewCategory.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                Category newCategory = new Category();
+                newCategory.setCode(txtCode.getText());
+                newCategory.setName(txtName.getText());
+                newCategory.setDescription(txtDescription.getText());
+                CategoryStatement.insert(newCategory);
+                tableCategory.getItems().clear();
+                categories = CategoryStatement.getCategoryList();
+                tableCategory.setItems(categories);
+                tableCategory.refresh();
+                txtCode.clear();
+                txtName.clear();
+                txtDescription.clear();
+            }
+        });
     }
+
 }

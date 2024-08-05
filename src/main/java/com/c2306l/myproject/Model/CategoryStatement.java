@@ -54,10 +54,11 @@ public class CategoryStatement {
     public static ObservableList<Category> getCategoryList(){
         ObservableList<Category> list = FXCollections.observableArrayList();
         try {
-            String query = "SELECT * FROM tblcategory";
+            String query = "SELECT * FROM `tblcategory`";
             PreparedStatement ps = conn.prepareStatement(query);
             ResultSet rs = ps.executeQuery();
             while(rs.next()){
+
                 Category category = new Category();
                 category.setId(rs.getInt("id"));
                 category.setCode(rs.getString("code"));
