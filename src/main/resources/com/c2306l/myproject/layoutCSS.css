@@ -1,0 +1,6 @@
+.left-pane {
+    -fx-background-color: linear-gradient(from 0% 0% to 100% 100%, #67d2ea, #1e90ff);
+}
+.left-pane:hover {
+    -fx-background-color: linear-gradient(to bottom right, #00FF00, #FFFF00);
+}
