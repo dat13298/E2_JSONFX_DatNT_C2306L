@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.c2306l.myproject.Controller.EditCategoryDialogController">
+    <children>
+        <TextField fx:id="txtEditCode" promptText="Code"/>
+        <TextField fx:id="txtEditName" promptText="Name"/>
+        <TextArea fx:id="txtEditDescription" promptText="Description"/>
+        <HBox spacing="10" alignment="CENTER_RIGHT">
+            <children>
+                <Button fx:id="btnSave" text="Save"/>
+                <Button fx:id="btnCancel" text="Cancel"/>
+            </children>
+        </HBox>
+    </children>
+    <padding>
+        <Insets top="10" right="10" bottom="10" left="10"/>
+    </padding>
+</VBox>

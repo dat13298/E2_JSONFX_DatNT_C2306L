@@ -29,7 +29,7 @@ public class CategoryStatement {
 
     public static void update(Category category){
         try {
-            String query = "UPDATE tblcategory SET code=?, cat_name=?, cat_description=? WHERE cat_id=?";
+            String query = "UPDATE tblcategory SET code=?, cat_name=?, cat_description=? WHERE id=?";
             PreparedStatement ps = conn.prepareStatement(query);
             ps.setString(1, category.getCode());
             ps.setString(2, category.getName());

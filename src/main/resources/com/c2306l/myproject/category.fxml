@@ -28,6 +28,7 @@
               <Button fx:id="btnNewCategory" layoutX="9.0" layoutY="401.0" mnemonicParsing="false" text="Create New Category" textFill="#1333c3" />
               <Button layoutX="213.0" layoutY="402.0" mnemonicParsing="false" text="Delete" textFill="#c91313" />
               <Button fx:id="btnEditCategory" layoutX="305.0" layoutY="402.0" mnemonicParsing="false" text="Update" textFill="#bc18a1" />
+            <Button fx:id="btnEdit" layoutX="9.0" layoutY="367.0" mnemonicParsing="false" text="Edit" />
             </children>
         </AnchorPane>
     </HBox>
