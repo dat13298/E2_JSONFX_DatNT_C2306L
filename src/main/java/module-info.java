@@ -7,6 +7,7 @@ module com.c2306l.myproject {
     requires com.dlsc.formsfx;
     requires net.synedra.validatorfx;
     requires java.sql;
+    requires jbcrypt;
     requires mysql.connector.java;
 
     opens com.c2306l.myproject to javafx.fxml;
