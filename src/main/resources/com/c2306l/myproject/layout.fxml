@@ -8,7 +8,11 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.StackPane?>
 
-<AnchorPane prefHeight="600.0" prefWidth="900.0" stylesheets="@layoutCSS.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.c2306l.myproject.Controller.LayoutController">
+<AnchorPane prefHeight="600.0" prefWidth="900.0"
+            stylesheets="@layoutCSS.css"
+            xmlns="http://javafx.com/javafx/22"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.c2306l.myproject.Controller.LayoutController">
     <BorderPane maxHeight="600.0" maxWidth="900" prefHeight="600.0" prefWidth="900.0" styleClass="left-pane">
         <top>
             <MenuBar maxHeight="35" maxWidth="900" prefHeight="35" prefWidth="900" styleClass="left-pane">
