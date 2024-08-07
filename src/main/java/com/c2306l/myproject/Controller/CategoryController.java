@@ -34,8 +34,9 @@ public class CategoryController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        CategoryStatement cs = new CategoryStatement();
 //        List categories
-        categories = CategoryStatement.getCategoryList();
+        categories = cs.selectAll();
 
         tableCategory.setEditable(true);
         tableCategory.getColumns().get(0).setVisible(false);
@@ -86,7 +87,7 @@ public class CategoryController implements Initializable {
                     editedCategory.setCode(txtCode.getText());
                     editedCategory.setName(txtName.getText());
                     editedCategory.setDescription(txtDescription.getText());
-                    CategoryStatement.update(editedCategory);
+                    cs.update(editedCategory);
                     tableCategory.refresh();
                     txtCode.clear();
                     txtName.clear();
@@ -111,6 +112,7 @@ public class CategoryController implements Initializable {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/c2306l/myproject/editCategoryDialog.fxml"));
             Stage dialogStage = new Stage();
+            CategoryStatement categoryStatement = new CategoryStatement();
             if(isEditMode){
                 dialogStage.setTitle("Edit Category");
             } else {
@@ -127,10 +129,10 @@ public class CategoryController implements Initializable {
             dialogStage.showAndWait();
             if (controller.isSaved()) {
                 if (isEditMode) {
-                    CategoryStatement.update(category);
+                    categoryStatement.update(category);
                 } else {
-                    CategoryStatement.insert(category);
-                    categories = CategoryStatement.getCategoryList();
+                    categoryStatement.insert(category);
+                    categories = categoryStatement.selectAll();
                 }
                 tableCategory.setItems(categories);
                 tableCategory.refresh();

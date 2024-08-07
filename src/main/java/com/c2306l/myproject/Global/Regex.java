@@ -1,6 +1,4 @@
-package com.c2306l.myproject.global;
-
-import java.util.regex.Pattern;
+package com.c2306l.myproject.Global;
 
 public class Regex {
     public static boolean validateCode(String code){

@@ -4,12 +4,14 @@ public class User {
     private int id;
     private String username;
     private String password;
+    private String tokenKey;
 
     public User(){;}
-    public User(int id, String username, String password) {
+    public User(int id, String username, String password, String tokenKey) {
         this.id = id;
         this.username = username;
         this.password = password;
+        this.tokenKey = tokenKey;
     }
 
     public int getId() {
@@ -36,12 +38,16 @@ public class User {
         this.password = password;
     }
 
+    public String getTokenKey() {
+        return tokenKey;
+    }
+
+    public void setTokenKey(String tokenKey) {
+        this.tokenKey = tokenKey;
+    }
+
     @Override
     public String toString() {
-        return "User{" +
-                "id=" + id +
-                ", username='" + username + '\'' +
-                ", password='" + password + '\'' +
-                '}';
+        return STR."User{id=\{id}, username='\{username}\{'\''}, password='\{password}\{'\''}, tokenKey='\{tokenKey}\{'\''}\{'}'}";
     }
 }
