@@ -39,7 +39,6 @@ public class AppProperties {
         prop.setProperty(key, defaultValue);
         String userHome = System.getProperty("user.home");
         String filePath = userHome + "/Application.properties"; // Lưu tại thư mục người dùng
-        System.out.println(filePath);
         try{
             FileOutputStream fos = new FileOutputStream(filePath);
             prop.store(fos, null);
