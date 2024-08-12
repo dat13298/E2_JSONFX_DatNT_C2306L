@@ -6,13 +6,8 @@ import com.c2306l.myproject.Entity.User;
 import com.c2306l.myproject.Model.UsersModel;
 import org.mindrot.jbcrypt.BCrypt;
 
-import java.math.BigInteger;
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
-import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.util.Base64;
 
 public class AuthenticationService {
 

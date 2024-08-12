@@ -22,7 +22,7 @@ public class UsersModel {
                 user.setPassword(rs.getString("user_password"));
             }
         }catch (SQLException e) {
-            System.out.println(e.getMessage());
+            e.printStackTrace();
         }
         return user;
     }
