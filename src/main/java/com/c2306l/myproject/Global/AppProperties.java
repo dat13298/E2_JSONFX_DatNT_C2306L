@@ -7,15 +7,19 @@ import java.io.InputStream;
 import java.util.Properties;
 
 public class AppProperties {
-    private static Properties prop = new Properties();
-    private static String APP_PROPERTIES = "app.properties";
+    private static final Properties prop = new Properties();
+    private static final String APP_PROPERTIES = "app.properties";
 
     static {
         try {
             InputStream inputStream = AppProperties.class.getClassLoader().getResourceAsStream(APP_PROPERTIES);
-            prop.load(inputStream);
+            if (inputStream != null) {
+                prop.load(inputStream);
+            } else {
+                System.out.println(STR."can not find \{APP_PROPERTIES}");
+            }
         }catch (Exception e){
-            System.out.println(e.getMessage());
+            System.out.println(STR."static: \{e.getMessage()}");
         }
     }
 
@@ -29,7 +33,7 @@ public class AppProperties {
             FileOutputStream fos = new FileOutputStream(APP_PROPERTIES);
             prop.store(fos, null);
         } catch (IOException e) {
-            System.out.println(e.getMessage());
+            System.out.println(STR."setProperties: \{e.getMessage()}");
         }
     }
 }

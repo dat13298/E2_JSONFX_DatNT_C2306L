@@ -8,6 +8,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -53,17 +54,19 @@ public class LoginController implements Initializable {
                     Stage stage = (Stage) node.getScene().getWindow();
                     stage.close();
 
+//                    URL url = getClass().getResource("/com/c2306l/myproject/layout.fxml");
+//                    System.out.println(url.getPath());
                     FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/c2306l/myproject/layout.fxml"));
+
                     try {
                         Scene scene = new Scene(fxmlLoader.load());
                         stage.setTitle("Main menu");
                         stage.setScene(scene);
                         stage.show();
                     } catch (IOException e) {
-                        throw new RuntimeException(e);
+                        System.out.println(e.getMessage());
+//                        throw new RuntimeException(e);
                     }
-
-
                 }
             }
         });

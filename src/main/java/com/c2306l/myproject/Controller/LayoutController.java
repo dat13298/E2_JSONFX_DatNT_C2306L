@@ -9,6 +9,7 @@ import javafx.scene.layout.StackPane;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.Objects;
 import java.util.ResourceBundle;
 
 public class LayoutController implements Initializable {
@@ -28,8 +29,7 @@ public class LayoutController implements Initializable {
             //load view category
             getContentPane("/com/c2306l/myproject/category.fxml");
         });
-
-        String css = getClass().getResource("/com/c2306l/myproject/layoutCSS.css").toExternalForm();
+        String css = Objects.requireNonNull(getClass().getResource("/com/c2306l/myproject/layoutCSS.css")).toExternalForm();
         stackPane.getStylesheets().add(css);
     }
 
