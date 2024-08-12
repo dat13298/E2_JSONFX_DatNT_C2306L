@@ -1,6 +1,7 @@
 package com.c2306l.myproject.Controller;
 
 import com.c2306l.myproject.Global.AppProperties;
+import com.c2306l.myproject.Model.UsersModel;
 import com.c2306l.myproject.Service.AuthenticationService;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -29,9 +30,9 @@ public class LoginController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        boolean islogin = true;
+//        boolean islogin = true;
         btnLogin.setOnAction(new EventHandler<ActionEvent>() {
-            boolean isLogin = true;
+            boolean islogin = true;
             @Override
             public void handle(ActionEvent event) {
                 String username = txtUsername.getText();
@@ -39,12 +40,13 @@ public class LoginController implements Initializable {
                 if(username.isEmpty() || password.isEmpty()){
                     lblMessage.setText("invalid username or password");
                     lblMessage.setStyle("-fx-text-fill: red");
-                    isLogin = false;
+                    islogin = false;
                 } else {
                     lblMessage.setText("invalid username or password");
                     lblMessage.setStyle("-fx-text-fill: red");
-                    isLogin = false;
+                    islogin = false;
                 }
+                islogin = AuthenticationService.login(username, password);
                 if(islogin){
                     AppProperties.setProperty("user.username", username);
                     AppProperties.setProperty("user.loggedin", "true");
@@ -54,8 +56,6 @@ public class LoginController implements Initializable {
                     Stage stage = (Stage) node.getScene().getWindow();
                     stage.close();
 
-//                    URL url = getClass().getResource("/com/c2306l/myproject/layout.fxml");
-//                    System.out.println(url.getPath());
                     FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/c2306l/myproject/layout.fxml"));
 
                     try {
@@ -67,6 +67,8 @@ public class LoginController implements Initializable {
                         System.out.println(e.getMessage());
 //                        throw new RuntimeException(e);
                     }
+                } else {
+                    lblMessage.setText("invalid username or password");
                 }
             }
         });
