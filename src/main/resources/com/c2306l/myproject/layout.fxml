@@ -10,24 +10,6 @@
 
 <AnchorPane prefHeight="600.0" prefWidth="900.0" stylesheets="@layoutCSS.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.c2306l.myproject.Controller.LayoutController">
     <BorderPane maxHeight="600.0" maxWidth="900" prefHeight="600.0" prefWidth="900.0" styleClass="left-pane">
-        <top>
-            <MenuBar maxHeight="35" maxWidth="900" prefHeight="35" prefWidth="900" styleClass="left-pane">
-                <Menu text="Category">
-                    <MenuItem fx:id="mnCategoryList" text="List" />
-                    <MenuItem text="Add" />
-                </Menu>
-                <Menu text="Product">
-                    <MenuItem text="List" />
-                    <MenuItem text="Add" />
-                </Menu>
-            <Menu mnemonicParsing="false" text="User">
-              <items>
-                <MenuItem fx:id="mnList" mnemonicParsing="false" text="List User" />
-                  <MenuItem fx:id="mnRegister" mnemonicParsing="false" text="Register" />
-              </items>
-            </Menu>
-            </MenuBar>
-        </top>
         <right>
 
         </right>
@@ -39,16 +21,32 @@
         </center>
         <bottom>
             <Label alignment="CENTER" contentDisplay="CENTER" text="Coppyright@2024" textAlignment="CENTER" />
+            <Label fx:id="lbWelcome" />
         </bottom>
         <left>
 
         </left>
-      <left>
+      <top>
 
-      </left>
-      <left>
-         <Label fx:id="lbWelcome" BorderPane.alignment="CENTER" />
-      </left>
+                  <MenuBar maxHeight="35" maxWidth="900" prefHeight="35" prefWidth="900" styleClass="left-pane">
+                      <Menu text="Category">
+                          <MenuItem fx:id="mnCategoryList" text="List" />
+                          <MenuItem text="Add" />
+                      </Menu>
+                      <Menu text="Product">
+                          <MenuItem text="List" />
+                          <MenuItem text="Add" />
+                      </Menu>
+                  <Menu mnemonicParsing="false" text="User">
+                    <items>
+                      <MenuItem fx:id="mnList" mnemonicParsing="false" text="List User" />
+                        <MenuItem fx:id="mnRegister" mnemonicParsing="false" text="Register" />
+                    </items>
+                  </Menu>
+                  </MenuBar>
+
+
+      </top>
 
     </BorderPane>
 

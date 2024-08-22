@@ -18,7 +18,7 @@ public class AppProperties {
                 prop.load(inputStream);
             }
         }catch (Exception e){
-            System.out.println("static: " + e.getMessage());
+            throw new RuntimeException(e);
         }
     }
 
@@ -32,7 +32,7 @@ public class AppProperties {
 //            FileOutputStream fos = new FileOutputStream(APP_PROPERTIES);
 //            prop.store(fos, null);
 //        } catch (IOException e) {
-//            e.printStackTrace();
+//            throw new RuntimeException(e);
 //        }
 //    }
     public static void setProperty(String key, String defaultValue) {
@@ -43,7 +43,7 @@ public class AppProperties {
             FileOutputStream fos = new FileOutputStream(filePath);
             prop.store(fos, null);
         } catch (IOException e) {
-            e.printStackTrace();
+            throw new RuntimeException(e);
         }
     }
 
